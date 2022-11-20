@@ -11,7 +11,7 @@ public class MyWebChromeClient extends WebChromeClient {
     ProgressBar myProgressBar;
 
     public MyWebChromeClient(Activity myActivity) {
-        this.myProgressBar = myActivity.findViewById(R.id.myProgressBar);
+        this.myProgressBar = myActivity.findViewById(R.id.my_progressBar);
     }
     
     @Override

@@ -14,20 +14,18 @@ import android.widget.TextView;
 public class MyWebViewClient extends WebViewClient implements OnClickListener {
 
     private MainActivity mainActivity;
-    private View myProgressLayout;
     private View myErrorLayout;
     private TextView myErrorTextView;
     private Button myUpdateButton;
+    private View myProgressBar;
     private boolean error;
 
     public MyWebViewClient(MainActivity mainActivity) {
         this.mainActivity = mainActivity;
-          
-        this.myProgressLayout = mainActivity.findViewById(R.id.progress_LinearLayout);
-        this.myErrorLayout = mainActivity.findViewById(R.id.errorLinearLayout);
-        this.myErrorTextView = mainActivity.findViewById(R.id.errorTextView);
-        this.myUpdateButton = mainActivity.findViewById(R.id.updateButton);
-        
+        myProgressBar = mainActivity.findViewById(R.id.my_progressBar);
+        myErrorLayout = mainActivity.findViewById(R.id.errorLinearLayout);
+        myErrorTextView = mainActivity.findViewById(R.id.errorTextView);
+        myUpdateButton = mainActivity.findViewById(R.id.updateButton);
         myUpdateButton.setOnClickListener(this);
     }
 
@@ -40,7 +38,7 @@ public class MyWebViewClient extends WebViewClient implements OnClickListener {
     @Override
     public void onPageFinished(WebView view, String url) {
         super.onPageFinished(view, url);
-        myProgressLayout.setVisibility(view.GONE);
+        myProgressBar.setVisibility(view.GONE);
         if(!error)
             myErrorLayout.setVisibility(view.GONE);
         
@@ -50,8 +48,7 @@ public class MyWebViewClient extends WebViewClient implements OnClickListener {
     public void onPageStarted(WebView view, String url, Bitmap favicon) {
         error = false;
         super.onPageStarted(view, url, favicon);
-        myProgressLayout.setVisibility(view.VISIBLE);
-        
+        myProgressBar.setVisibility(view.VISIBLE);
     }
     
     @Override
