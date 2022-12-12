@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Dyt</string>
+    <string name="app_name">DYT</string>
     <string name="connection_error">Erro de conexão!</string>
     <string name="retry">atualizar</string>
+    <string name="exit_confirmation_message">Quer mesmo sair?</string>
+    <string name="n_o_mostrar_novamente">não mostrar novamente</string>
+    <string name="key_show_tip">key_show_download_tip</string>
 </resources>
